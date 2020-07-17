@@ -1,7 +1,13 @@
 docker run --rm -u 1000:1000 \
     -e ROBOT_TESTS=/robots/scenario/scenario_1.robot \
     -e ROBOT_TESTS_REPORT=/robots/output \
+    -e ROBOT_SQL=/robots/sql \
+    -e DB_SERVER_NAME=host.docker.internal \
+    -e DB_SERVER_PORT=1433 \
+    -e DB_SCHEMA_NAME=PIHD \
+    -e DB_USERNAME=pihd \
+    -e DB_PASSWORD=P@ssw0rd \
     -e BROWSER=headlesschrome \
     -e URL=https://host.docker.internal:8443/ \
     -v /mnt/d/Development/pihd/at_script/ui:/robots \
-    -ti tongace/docker-robot-framework:latest
+    -ti tongace/docker-robot-framework:3.0
