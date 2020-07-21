@@ -1,5 +1,5 @@
 docker run --rm -u 1000:1000 \
-    -e ROBOT_TESTS=/robots/scenario/scenario_1.robot \
+    -e ROBOT_TESTS=/robots/scenario/scenario_38.robot \
     -e ROBOT_TESTS_REPORT=/robots/output \
     -e ROBOT_SQL=/robots/sql \
     -e DB_SERVER_NAME=host.docker.internal \
@@ -10,4 +10,4 @@ docker run --rm -u 1000:1000 \
     -e BROWSER=headlesschrome \
     -e URL=https://host.docker.internal:8443/ \
     -v /mnt/d/Development/pihd/at_script/ui:/robots \
-    -ti tongace/docker_robot_framework:latest
+    -ti tongace/docker-robot-framework:latest
