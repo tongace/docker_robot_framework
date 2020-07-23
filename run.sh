@@ -13,6 +13,8 @@ echo -e "DB_PASSWORD as $DB_PASSWORD"
 echo -e "BROWSER as $BROWSER"
 echo -e "URL as $URL"
 
+echo -e "SLEEP_IN_SEC as $SLEEP_IN_SEC"
+
 if [ -z "${ROBOT_TESTS}" ] || [ -z "${ROBOT_TESTS_REPORT}" ]
 then
     echo -e "environment ROBOT_TESTS and ROBOT_TESTS_REPORT are required"
@@ -36,5 +38,6 @@ robot  \
     -v DB_SCHEMA_NAME:${DB_SCHEMA_NAME} \
     -v DB_USERNAME:${DB_USERNAME} \
     -v DB_PASSWORD:${DB_PASSWORD} \
+	-v SLEEP_IN_SEC:${SLEEP_IN_SEC} \
     --outputdir ${ROBOT_TESTS_REPORT} \
     ${ROBOT_TESTS}

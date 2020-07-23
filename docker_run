@@ -9,5 +9,6 @@ docker run --rm -u 1000:1000 \
     -e DB_PASSWORD=P@ssw0rd \
     -e BROWSER=headlesschrome \
     -e URL=https://host.docker.internal:8443/ \
+	-e SLEEP_IN_SEC=3 \
     -v /mnt/d/Development/pihd/at_script/ui:/robots \
     -ti tongace/docker-robot-framework:latest
