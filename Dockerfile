@@ -2,7 +2,7 @@ FROM python:3.7.8-alpine3.12
 
 RUN apk add --no-cache \
     bash chromium chromium-chromedriver \
-    gcc python3-dev musl-dev freetds freetds-dev
+    gcc python3-dev musl-dev freetds freetds-dev tzdata
 
 RUN pip install  --no-cache-dir --upgrade pip setuptools wheel
 RUN pip install  --no-cache-dir robotframework \
@@ -11,6 +11,7 @@ RUN pip install  --no-cache-dir robotframework \
     cython 
 RUN pip install  --no-cache-dir pymssql
 
+ENV TZ=Asia/Bangkok
 ADD run.sh /usr/local/bin/run.sh
 RUN chmod 755 /usr/local/bin/run.sh
 
