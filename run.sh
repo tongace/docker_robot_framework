@@ -14,6 +14,7 @@ echo -e "BROWSER as $BROWSER"
 echo -e "URL as $URL"
 
 echo -e "SLEEP_IN_SEC as $SLEEP_IN_SEC"
+echo -e "UPLOAD_FILE_PATH as ${UPLOAD_FILE_PATH}"
 
 if [ -z "${ROBOT_TESTS}" ] || [ -z "${ROBOT_TESTS_REPORT}" ]
 then
@@ -39,5 +40,6 @@ robot  \
     -v DB_USERNAME:${DB_USERNAME} \
     -v DB_PASSWORD:${DB_PASSWORD} \
 	-v SLEEP_IN_SEC:${SLEEP_IN_SEC} \
+	-v UPLOAD_FILE_PATH:${UPLOAD_FILE_PATH} \
     --outputdir ${ROBOT_TESTS_REPORT} \
     ${ROBOT_TESTS}
